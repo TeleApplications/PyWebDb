@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %} Edit {% endblock %}
+
+{% block body %}
+<form action="{{ url_for('edit', row_id=row_id) }}" method="post">
+    <div class="container2">
+        <table>
+            <tr>
+                {% for index, column in columns %}
+                    <input class="edit_input" name="data_{{index}}" type="text" value="{{ column }}" size="15" required/>
+                {% endfor %}
+
+            </tr>
+        </table>
+        <div class="edit_button_holder">
+            <button  class="edit_button" type="submit">Update</button>
+        </div>
+    </div>
+
+
+</form>
+{% endblock %}

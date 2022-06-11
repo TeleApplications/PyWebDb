@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %} Title {% endblock %}
+
+{% block body %}
+<form action="{{ url_for('home') }}" method="GET">
+    <table>
+        {% for index, row in rows %}
+        <tr>
+            {% for column in row %}
+                <td>{{ column }} </td>
+            {% endfor %}
+            {% if current_user.permissions %}
+            <td><a href="{{ url_for('edit',row_id=index) }}"><button type="button" value="{{ index }}">Edit</button></a></td>
+            <td><a href="{{ url_for('delete', row_id=index) }}"><button type="button" value="{{ index }}">Delete</button></a></td>
+            {% endif %}
+        </tr>
+        {% endfor %}
+    </table>
+</form>
+{% endblock %}

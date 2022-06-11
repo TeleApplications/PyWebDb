@@ -1,0 +1,38 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/styles.css') }}">
+</head>
+    <body>
+        <header>
+        <a href="{{ url_for('home') }}"> <img class="logo" src="{{ url_for('static', filename='images/logo.png') }}" width="64" height="64" alt="logo"></a>
+        <nav>
+            <ul class="nav_links">
+                <li><a href="{{ url_for('home') }}">Home</a> </li>
+                {% if current_user.permissions %}
+                <li><a href="{{ url_for('insert') }}">Insert</a></li>
+                {% endif %}
+                <li><a href="{{ url_for('register') }}">Sign Up</a></li>
+
+                {% if current_user.get_id() %}
+                <li><a href="{{ url_for('logout') }}">Logout</a></li>
+                {% else %}
+                <li><a href="{{ url_for('login') }}">Login</a></li>
+                {% endif %}
+                <li ><a target="_blank" href="https://github.com/schemeXY/">Author</a></li>
+                <li ><a target="_blank" href="https://github.com/TeleApplications/">Source</a></li>
+            </ul>
+        </nav>
+    </header>
+    {% block body %}{% endblock %}
+
+    <footer>
+        <!--        app.datatime ???? -->
+        <p>Copyright &copy; <script>document.write(new Date().getFullYear());</script> SchemeXY </p>
+    </footer>
+    </body>
+
+</html>

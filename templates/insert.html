@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %} Insert {% endblock %}
+
+{% block body %}
+<form action="{{ url_for('insert') }}" method="post">
+    <div class="container2">
+    {% for index, column in column_count %}
+    <p>{{column[0]}}</p>
+    <input class="edit_input" name="data_{{index}}" required />
+
+    {% endfor %}
+</div>
+<div class="edit_button_holder">
+    <button  class="edit_button" type="submit">Insert</button>
+</div>
+</form>
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %} Login {% endblock %}
+
+{% block body %}
+<h1>Login Form</h1>
+
+<form action="{{ url_for('login') }}" method="POST">
+  <div class="container">
+    <label for="username"><b>Username</b></label>
+    <input class="account_input" type="text" placeholder="Enter Username" name="username" id="username" required>
+    <hr>
+    <label for="password"><b>Password</b></label>
+    <input class="account_input" type="password" placeholder="Enter Password" name="password" id="password" required>
+
+    <hr>
+    <button type="submit" class="account_btn">Login</button>
+
+  </div>
+
+  <div class="container login">
+    <p class="status_msg">{{ status_msg }}</p>
+    <p>Don't have an account? <a href="/register">Register</a>.</p>
+  </div>
+</form>
+{% endblock %}
