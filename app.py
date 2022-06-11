@@ -134,5 +134,6 @@ def delete(row_id: int) -> redirect:
 # {% if condition %} code... {% else %} code... {% endif %}         # if else
 # {% block block_name%} code... {% endblock %}                      # block of code
 # {% endtends "...hmtl" %}                                          # inheritance
+
 if __name__ == '__main__':
     app.run()
