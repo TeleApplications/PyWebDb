@@ -134,4 +134,4 @@ def delete(row_id: int) -> redirect:
 # {% if condition %} code... {% else %} code... {% endif %}         # if else
 # {% block block_name%} code... {% endblock %}                      # block of code
 # {% endtends "...hmtl" %}                                          # inheritance
-app.run(debug=True, threaded=True, port=6969)
+app.run()
