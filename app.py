@@ -116,7 +116,7 @@ def delete(row_id: int) -> redirect:
     default_db.query("DELETE FROM vulkanolog WHERE VulkanologID={}".format(row_id))
     return redirect(url_for("home"))
 
-
+# Help
 # {{ variable_name }}                                               # variable
 # {% for _ in range(...) %} code{{_}}... {% endfor %}               # for loop
 # {% if condition %} code ...{% endif %}                            # if
