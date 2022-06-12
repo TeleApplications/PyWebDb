@@ -126,6 +126,8 @@ def delete(row_id: int) -> redirect:
 
 
 
+def main():
+    app.run()
 
 if __name__ == '__main__':
-    app.run()
+    main()
