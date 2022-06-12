@@ -5,8 +5,6 @@ __licence__ = "Copyright © 2022 SchemeXY"
 __version__ = "0.1.0"
 
 
-# DO NOT FORGET IT IS SQLITE3 !!!!!!
-
 class Database:
     sql_cmd = """SELECT vulk.FirstName, vulk.LastName, c.City, a.Street, a.PostalCode, b.Birthdate, g.Gender FROM vulkanolog as vulk
         INNER JOIN birthdate as b ON vulk.BirthdateID=b.BirthdateID
