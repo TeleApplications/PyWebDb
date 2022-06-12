@@ -76,17 +76,6 @@ def register() -> render_template:
     return render_template("register.html")
 
 
-@app.route("/dashboard/", methods=["POST", "GET"])
-@login_required
-def dashboard() -> render_template:
-    if current_user.has_permissions():  # check permissions if admin >> load | else >> redirect
-        if request.method == "POST":
-            sql_command = request.form["command"]
-            default_db.query(sql_command)
-        return render_template("dashboard.html")
-    return redirect(url_for("home"))
-
-
 @app.route("/logout/", methods=["POST", "GET"])
 @login_required
 def logout() -> redirect:
